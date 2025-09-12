@@ -58,7 +58,7 @@ AWS_GroceryMate/
 🚫 S3 Block Public Access configured — avatars served via pre-signed URLs or CloudFront
 ---
 
-## 🚀 Deployment
+### 🚀 Deployment
 
 ### 1️⃣ Prerequisites
 
@@ -84,7 +84,7 @@ EC2 instance automatically bootstraps using user_data.sh
 Backend Flask app runs in Docker on EC2
 Frontend can be hosted on S3 + CloudFront (future improvement)
 
-## 🏗️ Architecture Diagram
+### 🏗️ Architecture Diagram
 
 This is how your infrastructure is connected:
 
