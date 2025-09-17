@@ -9,26 +9,7 @@ This project serves as a portfolio showcase of skills in:
 - ⚙️ Infrastructure as Code (Terraform)  
 - 🐳 Containerization (Docker for backend)
 
----
-
-## 🌐 Live App
-
-🔗 Access the app here:  
-👉 [http://aws-grocery-alb-1251741495.eu-central-1.elb.amazonaws.com](http://aws-grocery-alb-1251741495.eu-central-1.elb.amazonaws.com)
-
-![Live GroceryMate App](images/app-live.png)
-
----
-
-## 📖 Features
-
-### 🍽️ Application
-
-- 👨‍🍳 **Frontend**: React + TailwindCSS  
-- 🛠 **Backend**: Flask REST API with Docker  
-- 🗄 **Database**: PostgreSQL on Amazon RDS  
-- 🖼 **File Storage**: AWS S3 for static assets/avatars
-
+---  
 ### 🏗️ Infrastructure
 
 - This is how your infrastructure is connected:
@@ -49,6 +30,26 @@ This project serves as a portfolio showcase of skills in:
   ![S3 Bucket](images/aws-console-s3.png)
 
 - 📜 **Terraform**: Manages provisioning and deployment
+
+---
+
+## 🌐 Live App
+
+🔗 Access the app here:  
+👉 [http://aws-grocery-alb-1251741495.eu-central-1.elb.amazonaws.com](http://aws-grocery-alb-1251741495.eu-central-1.elb.amazonaws.com)
+
+![Live GroceryMate App](images/app-live.png)
+
+---
+
+## 📖 Features
+
+### 🍽️ Application
+
+- 👨‍🍳 **Frontend**: React + TailwindCSS  
+- 🛠 **Backend**: Flask REST API with Docker  
+- 🗄 **Database**: PostgreSQL on Amazon RDS  
+- 🖼 **File Storage**: AWS S3 for static assets/avatars
 
 ---
 
