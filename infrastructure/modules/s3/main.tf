@@ -1,12 +1,9 @@
 resource "aws_s3_bucket" "avatars" {
-  bucket = "aws-grocery-avatars-v1"
+  bucket = var.bucket_name
 
-  tags = {
-    Name = "Grocery-Avatars-Bucket"
-  }
+  tags = var.tags
 }
 
-# 👇 Enable ACLs
 resource "aws_s3_bucket_ownership_controls" "avatars_ownership" {
   bucket = aws_s3_bucket.avatars.id
   rule {
@@ -14,7 +11,6 @@ resource "aws_s3_bucket_ownership_controls" "avatars_ownership" {
   }
 }
 
-# 👇 Disable public access blocks
 resource "aws_s3_bucket_public_access_block" "avatars_public_access" {
   bucket = aws_s3_bucket.avatars.id
   block_public_acls       = false
@@ -23,7 +19,6 @@ resource "aws_s3_bucket_public_access_block" "avatars_public_access" {
   restrict_public_buckets = false
 }
 
-# 👇 Lifecycle
 resource "aws_s3_bucket_lifecycle_configuration" "avatars_lifecycle" {
   bucket = aws_s3_bucket.avatars.bucket
 
@@ -45,7 +40,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "avatars_lifecycle" {
   }
 }
 
-# 👇 Versioning
 resource "aws_s3_bucket_versioning" "avatars_versioning" {
   bucket = aws_s3_bucket.avatars.id
   versioning_configuration {
@@ -53,19 +47,18 @@ resource "aws_s3_bucket_versioning" "avatars_versioning" {
   }
 }
 
-# 👇 Policy — Use .id and .arn
-# resource "aws_s3_bucket_policy" "allow_read" {
-#   bucket = aws_s3_bucket.avatars.id
-#
-#   policy = jsonencode({
-#     Version = "2012-10-17",
-#     Statement = [
-#       {
-#         Effect    = "Allow",
-#         Principal = "*",
-#         Action    = "s3:GetObject",
-#         Resource  = "${aws_s3_bucket.avatars.arn}/*"
-#       }
-#     ]
-#   })
-# }
+resource "aws_s3_bucket_policy" "allow_read" {
+  bucket = aws_s3_bucket.avatars.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect    = "Allow",
+        Principal = "*",
+        Action    = "s3:GetObject",
+        Resource  = "${aws_s3_bucket.avatars.arn}/*"
+      }
+    ]
+  })
+}
